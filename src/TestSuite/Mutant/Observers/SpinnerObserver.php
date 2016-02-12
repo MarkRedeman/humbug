@@ -56,6 +56,10 @@ class SpinnerObserver extends BaseObserver
         $this->input = $input;
         $this->output = $output;
         $this->refresh = $refresh;
+
+        if (!defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->states = ['◓', '◑', '◒', '◐'];
+        }
     }
 
     /**
